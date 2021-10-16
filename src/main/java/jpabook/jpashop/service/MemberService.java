@@ -24,7 +24,7 @@ public class MemberService {
     return memberRepository.save(member);
 
   }
-  
+
   private void validateDuplicateMember(Member member) {
     //Exception
     List<Member> result = memberRepository.findByName(member.getName());
@@ -37,7 +37,14 @@ public class MemberService {
   public List<Member> findMembers() {
     return memberRepository.findAll();
   }
+
   public Member findOne(Long id) {
     return memberRepository.findOne(id);
+  }
+
+  @Transactional
+  public void update(Long id, String name) {
+    Member member = memberRepository.findOne(id);
+    member.setName(name);
   }
 }
