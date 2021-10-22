@@ -4,8 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.repository.MemberRepository;
-import org.junit.jupiter.api.Assertions;
+import jpabook.jpashop.repository.MemberRepositoryOld;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 class MemberServiceTest {
 
   @Autowired
-  MemberRepository memberRepository;
+  MemberRepositoryOld memberRepositoryOld;
 
   @Autowired
   MemberService memberService;
@@ -35,7 +34,7 @@ class MemberServiceTest {
 
 
     //Then
-    assertThat(member).isEqualTo(memberRepository.findOne(saveId));
+    assertThat(member).isEqualTo(memberRepositoryOld.findOne(saveId));
 
 
   }

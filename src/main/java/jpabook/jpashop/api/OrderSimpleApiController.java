@@ -25,8 +25,7 @@ public class OrderSimpleApiController {
 
   @GetMapping("/api/v1/simple-orders")
   public List<Order> ordersV1() {
-    List<Order> result = orderRepository.findAllByString(new OrderSearch());
-    return result;
+    return orderRepository.findAllByString(new OrderSearch());
   }
 
   @GetMapping("/api/v2/simple-orders")

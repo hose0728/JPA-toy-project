@@ -2,6 +2,7 @@ package jpabook.jpashop.domain;
 
 import static javax.persistence.FetchType.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -28,7 +29,7 @@ public class OrderItem {
   @ManyToOne(fetch = LAZY)
   @JoinColumn(name = "item_id")
   private Item item;
-
+  @JsonIgnore
   @ManyToOne(fetch = LAZY)
   @JoinColumn(name = "order_id")
   private Order order;

@@ -2,8 +2,7 @@ package jpabook.jpashop;
 
 
 import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.repository.MemberRepository;
-import org.assertj.core.api.Assertions;
+import jpabook.jpashop.repository.MemberRepositoryOld;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,10 +13,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 @SpringBootTest
-class MemberRepositoryTest {
+class MemberRepositoryOldTest {
 
   @Autowired
-  MemberRepository memberRepository;
+  MemberRepositoryOld memberRepositoryOld;
 
   @Test
   @Transactional

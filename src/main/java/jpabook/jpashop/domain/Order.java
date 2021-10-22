@@ -22,6 +22,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.BatchSize;
 
 
 @Entity
@@ -38,6 +39,7 @@ public class Order {
   @ManyToOne(fetch = LAZY)
   @JoinColumn(name = "member_id")
   private Member member;
+  //@BatchSize(size = 100) 개별 fetch 사이즈
   @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
   private List<OrderItem> orderItems = new ArrayList<>();
 
